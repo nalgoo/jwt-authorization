@@ -1,5 +1,6 @@
 {
     "name": "nalgoo/jwt-authorization",
+    "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
         {
@@ -36,5 +37,9 @@
         "psr-4": {
             "Nalgoo\\JwtAuthorization\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
     }
 }
