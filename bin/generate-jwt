@@ -60,7 +60,19 @@ function generateJwt(): string
 	return getToken(getBuilder()->withClaim('access', $data));
 }
 
-function renderJwt(string $name, string $jwt)
+function generateCustomJwt(): string
+{
+	$action   = read_line('Action');
+	$resource = read_line('Resource');
+
+	$data = [
+		['action' => $action, 'resource' => $resource],
+	];
+
+	return getToken(getBuilder()->withClaim('access', $data));
+}
+
+function renderJwt(string $name, string $jwt): void
 {
 	echo '-----' . PHP_EOL;
 	echo "JWT for " . $name . ':' . PHP_EOL;
@@ -72,6 +84,7 @@ function renderJwt(string $name, string $jwt)
 
 while (1) {
 	echo "[T] Generate test token" . PHP_EOL;
+	echo "[C] Generate custom token" . PHP_EOL;
 	echo "[Q] Quit" . PHP_EOL;
 	echo "Choose action: ";
 
@@ -80,7 +93,10 @@ while (1) {
 
 	switch(strtoupper($command)) {
 	  case 'T':
-		  renderJwt('Generating long-lived token (10 years) with action = test and resource = urn:test', generateJwt());
+		  renderJwt('Long-lived token (10 years) with action = test and resource = urn:test', generateJwt());
+		  break;
+	  case 'C':
+		  renderJwt('Custom token valid for 1 hour', generateCustomJwt());
 		  break;
 	  case 'Q':
 		die;
