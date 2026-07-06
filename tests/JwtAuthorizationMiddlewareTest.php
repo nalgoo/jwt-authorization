@@ -18,7 +18,7 @@ class JwtAuthorizationMiddlewareTest extends TestCase
 	 * @var array<int, array{action: string, resource: string, jwt: string}>
 	 */
 	private array $tokens = [
-		['action' => 'test', 'resource' => 'urn:test', 'jwt' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFZERTQSJ9.eyJpYXQiOjE3NTc1MDc0MTksIm5iZiI6MTc1NzUwNzQxOSwiZXhwIjoyMDczMDQwMjE5LCJhY2Nlc3MiOlt7ImFjdGlvbiI6InRlc3QiLCJyZXNvdXJjZSI6InVybjp0ZXN0In1dfQ.akAjGV9pXdOy2020WQJng7E4gQRZe0NJfkSKfj2fzKILLUMRBuXNqPlZq-f9bighuO2dwjV-57DdQ-yeA5ODDg'],
+		['action' => 'test', 'resource' => 'urn:test:resource', 'jwt' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFZERTQSJ9.eyJpYXQiOjE3ODMzMzYzOTQsIm5iZiI6MTc4MzMzNjM5NCwiZXhwIjoyMDk4OTU1NTk0LCJhY2Nlc3MiOlt7ImFjdGlvbiI6InRlc3QiLCJyZXNvdXJjZSI6InVybjp0ZXN0OnJlc291cmNlIn1dfQ.b-iVWBpeONppQPGvVAd5qUqViml_tftfJtTj4syHj2QQ4qDxyAFOg3ymV9r5bg8jX2QyTutsjti5lFKd3lUGAA'],
 	];
 
 	public function testProcess(): void
@@ -42,6 +42,6 @@ class JwtAuthorizationMiddlewareTest extends TestCase
 		/** @var JwtAuthorizationRule $rule */
 		$rule = $rules[0];
 		$this->assertEquals('test', $rule->getAction());
-		$this->assertEquals('urn:test', (string) $rule->getResource());
+		$this->assertEquals('urn:test:resource', (string) $rule->getResource());
 	}
 }
