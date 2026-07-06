@@ -26,7 +26,7 @@
         "lcobucci/clock": "^3.0",
         "nyholm/psr7": "1.8.2",
         "phpstan/phpstan": "^2.2",
-        "phpunit/phpunit": "12.3.8",
+        "phpunit/phpunit": "^11.5.50 || ^12.5.8",
         "symfony/clock": "^7.3"
     },
     "autoload": {

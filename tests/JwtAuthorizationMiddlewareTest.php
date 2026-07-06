@@ -11,8 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 class JwtAuthorizationMiddlewareTest extends TestCase
 {
-	const string PRIVATE_KEY = 'ougbDwhdV3dFaryfuIfZPznuMu77nBx/AidxkZY9iZuIgvBnejBEvhh9MRjBpK8tEPRSYBHDPjdEd5HLHZHR3w==';
-	const string PUBLIC_KEY  = 'iILwZ3owRL4YfTEYwaSvLRD0UmARwz43RHeRyx2R0d8=';
+	const PRIVATE_KEY = 'ougbDwhdV3dFaryfuIfZPznuMu77nBx/AidxkZY9iZuIgvBnejBEvhh9MRjBpK8tEPRSYBHDPjdEd5HLHZHR3w==';
+	const PUBLIC_KEY  = 'iILwZ3owRL4YfTEYwaSvLRD0UmARwz43RHeRyx2R0d8=';
 
 	/**
 	 * @var array<int, array{action: string, resource: string, jwt: string}>
