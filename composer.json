@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "8.2.* || 8.3.* || 8.4.*",
+        "php": "8.2.* || 8.3.* || 8.4.* || 8.5.*",
         "lcobucci/jwt": "^4.3 || ^5.5",
         "league/uri": "^7.5.1",
         "league/uri-interfaces": "^7.5.0",
@@ -18,8 +18,8 @@
         "psr/http-message": "*",
         "psr/http-server-middleware": "*",
         "psr/http-server-handler": "*",
-        "symfony/property-access": "^6.4 || ^7.1",
-        "symfony/serializer": "^6.4 || ^7.1"
+        "symfony/property-access": "^6.4 || ^7.1 || ^8.0",
+        "symfony/serializer": "^6.4 || ^7.1 || ^8.0"
     },
     "require-dev": {
         "ext-sodium": "*",
